@@ -29,6 +29,7 @@ include "config/config.php";
 				$i = $_quiv["kitchen"];
 				$j = $_quiv["bathroom"];
 				$k = $_quiv["address"];
+				$i = $_quiv["contact"];
 
 
 				// $a = $_SESSION["houseid"];
@@ -93,6 +94,10 @@ include "config/config.php";
 					<tr>
 						<th>address:</th>
 						<td><?php echo $k; ?></td>
+					</tr>
+					<tr>
+						<th>Contact:</th>
+						<td><?php echo $i; ?></td>
 					</tr>
 
              	</tbody>

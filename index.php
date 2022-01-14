@@ -25,6 +25,7 @@ body, html {
 
 
 </style>
+
 <div class="bg"></div><br>
 <div class="container active-cyan-4 mb-4 inline">
 	<div class="table-responsive">
@@ -33,25 +34,14 @@ body, html {
    
         <th>Ownerrname</th>
         <th>pic</th>
-        <th>view details</th>
+        <th>Address</th>
+        <?php
+        if($_SESSION['logged_in']=='Y'){
+          echo "<th>view details</th>";
+        }
+        ?>
       </thead>
-      <div class="card mb-4">
-                        <div class="card-header">Categories</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="category_rent.php?category=Flat_Rent">Flat</a></li>
-                                        <li><a href="category_rent.php?category=FullHouse">Full House</a></li>
-                                      
-                                        <li><a href="category_rent.php?category=Room">Room</a></li>
-                                       
-                                    </ul>
-                                </div>
-                      
-                            </div>
-                        </div>
-                    </div>
+     
       <tbody>
 
         <?php
@@ -91,9 +81,12 @@ body, html {
               //echo "<td> $a </td>";
                echo "<td> $b</td>";
                echo "<td><img src= $k height='100px' width='100px'></td>";
-         
-           echo " <td><a href='details.php?id=$a'>Details</a></td>";
-             echo "</tr>";
+               echo "<td> $j</td>";
+              
+               if($_SESSION['logged_in']=='Y'){
+                echo " <td><a href='details.php?id=$a'>Details</a></td>";
+               }
+              echo "</tr>";
 
                       }
 
@@ -129,3 +122,4 @@ body, html {
 </div>
 <br>
 <br>
+

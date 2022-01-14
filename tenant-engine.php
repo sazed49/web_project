@@ -1,3 +1,6 @@
+<?php
+// session_start();
+?>
 <?php 
 
 $tenant_id='';
@@ -56,7 +59,7 @@ if(!empty($_FILES['id_photo'])){
 	$full_name=validate($_POST['full_name']);
 	$email=validate($_POST['email']);
 	$password=validate($_POST['password']);
-	$phone_no=validate($_POST['phone_no']);
+	$phone_no=$_POST['phone_no'];
 	$address=validate($_POST['address']);
 	
 	$id_photo=$_POST['id_photo'];
@@ -80,8 +83,9 @@ function tenant_login(){
 		if($result->num_rows==1){
 			$data = $result-> fetch_assoc();
 			$logged_user = $data['email'];
-			session_start();
-			$_SESSION['email']=$email;
+			// session_start();
+			$_SESSION['email']=$data['email'];
+			$_SESSION['full_name']=$data["full_name"];
 			header('location:index.php');
     
 
@@ -138,9 +142,9 @@ function tenant_update(){
 	$email=validate($_POST['email']);
 	$phone_no=validate($_POST['phone_no']);
 	$address=validate($_POST['address']);
-	$id_type=validate($_POST['id_type']);
+	
 	$password = md5($password); // Encrypt password
-		$sql = "UPDATE tenant SET full_name='$full_name',email='$email',phone_no='$phone_no',address='$address',id_type='$id_type' WHERE tenant_id='$tenant_id'";
+		$sql = "UPDATE tenant SET full_name='$full_name',email='$email',phone_no='$phone_no',address='$address' WHERE tenant_id='$tenant_id'";
 		$query=mysqli_query($db,$sql);
 		if(!empty($query)){
 			?>
