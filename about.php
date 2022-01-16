@@ -1,13 +1,14 @@
 
 <?php
-
+session_start();
 include("navibar.php");
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -81,10 +82,10 @@ input[type=button], input[type=submit], input[type=reset] {
 <div class="about-section">
   <h1>About Us </h1>
   <p>This website was created for the project of web development laboratory in my 3rd year 1st term semister. </p>
-  <p>I have developed it using html,css,javascirpt,cookies,session,SQLDatabase.</p>
+  <p>I have developed it using html,css,javascirpt,cookies,session,PHP,SQLDatabase.</p>
 </div>
 
-<h2 style="text-align:center">Developers's Info</h2>
+<h2 style="text-align:center">Developer's Info</h2>
 <div class="row">
   
 

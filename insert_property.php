@@ -26,6 +26,7 @@ session_start();
 					$kitchen=$_POST['kitchen'];
 					$bathroom=$_POST['bathroom'];
 					$address=$_POST['address'];
+					$fulladdress=$_POST['fulladdress'];
 					$file=$_FILES['file'];
 					$contact = $_SESSION['phone_no'];
 					//print_r($username);
@@ -43,7 +44,7 @@ session_start();
 					if (in_array($filecheck, $fileextstored)){
 						$destinationfile='upload/'.$filename;
 						move_uploaded_file($filetmp, $destinationfile);
-					$q = "INSERT INTO imgupload (`ownername`, `property_type`, `estimated_price`, `total_rooms`, `bedroom`, `living_room`, `kitchen`, `bathroom`, `address`, `image`, `contact`) VALUES ('$ownername','$property_type', '$estimated_price', '$total_rooms', '$bedroom', '$living_room', '$kitchen', '$bathroom', '$address', '$destinationfile', '$contact')";
+					$q = "INSERT INTO imgupload (`ownername`, `property_type`, `estimated_price`, `total_rooms`, `bedroom`, `living_room`, `kitchen`, `bathroom`, `address`,`fulladdress`, `image`, `contact`) VALUES ('$ownername','$property_type', '$estimated_price', '$total_rooms', '$bedroom', '$living_room', '$kitchen', '$bathroom', '$address','$fulladdress', '$destinationfile', '$contact')";
 //  $q= "INSERT INTO `imgupload`(`ownername`,`property_type`,`estimated_price`,`total_rooms`,`bedroom`,`living_room`,`kitchen`,`bathroom`,`address`, `image`) VALUES ('$ownername','$property_type','$estimated_price','$total_rooms','$bedroom','$living_room','$kitchen','$bathroom','$address',$destinationfile')";
 						$query=mysqli_query($con,$q);
 						// $displayquery = " select * from imgupload ";

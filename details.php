@@ -29,7 +29,8 @@ include "config/config.php";
 				$i = $_quiv["kitchen"];
 				$j = $_quiv["bathroom"];
 				$k = $_quiv["address"];
-				$i = $_quiv["contact"];
+				$l = $_quiv["fulladdress"];
+				$m = $_quiv["contact"];
 
 
 				// $a = $_SESSION["houseid"];
@@ -92,14 +93,17 @@ include "config/config.php";
 						<td><?php echo $j; ?></td>
 					</tr>
 					<tr>
-						<th>address:</th>
+						<th>Location:</th>
 						<td><?php echo $k; ?></td>
 					</tr>
 					<tr>
-						<th>Contact:</th>
-						<td><?php echo $i; ?></td>
+						<th>Full Address:</th>
+						<td><?php echo $l; ?></td>
 					</tr>
-
+					<tr>
+						<th>Contact:</th>
+						<td><?php echo $m; ?></td>
+					</tr>
              	</tbody>
     		</table>
 			</div>

@@ -25,9 +25,9 @@ if(isset($_POST['tenant_register'])){
 	tenant_register();
 }
 
-if(isset($_POST['tenant_login'])){
-	tenant_login();
-}
+// if(isset($_POST['tenant_login'])){
+// 	tenant_login();
+// }
 
 if(isset($_POST['tenant_update'])){
 	tenant_update();
@@ -66,7 +66,7 @@ if(!empty($_FILES['id_photo'])){
 	$password = md5($password); // Encrypt password
 		$sql = "INSERT INTO tenant(tenant_id,full_name,email,password,phone_no,address,id_photo) VALUES('$tenant_id','$full_name','$email','$password','$phone_no','$address','$path')";
 		if($db->query($sql)===TRUE){
-			setcookie("address", "$address", time()+86400, "/");
+			
 			header("location:tenant-login.php");
 	}
 }
@@ -87,6 +87,10 @@ function tenant_login(){
 			// session_start();
 			$_SESSION['email']=$data['email'];
 			$_SESSION['full_name']=$data["full_name"];
+
+			setcookie("email", $email, time()+86400, "/");
+			//echo $_COOKIE['address'];
+			
 			header('location:index.php');
     
 

@@ -1,5 +1,4 @@
 <?php
-
     $keyword=$_GET['category'];
    // echo $keyword;
 ?>
@@ -33,7 +32,7 @@ body, html {
   background-size: cover;
 }
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: #4CAF50;
+  background-color: #6867AC;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -41,18 +40,56 @@ input[type=button], input[type=submit], input[type=reset] {
   margin: 4px 2px;
   cursor: pointer;
 }
+.color{
+  background-color:#FFCBCB;
 
+
+}
+
+tr:hover {background-color: #EA99D5;}
 </style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body class="color">
 <div class="bg"></div><br>
 <div class="container active-cyan-4 mb-4 inline">
 	<div class="table-responsive">
-    <table class="table table-bordered table-stripted table-hover text-center">
+    <table class="table table-bordered table-stripted  text-center">
       <thead>
    
-        <th>Ownerrname</th>
-        <th>pic</th>
-        <th>view details</th>
-      </thead>
+       
+      <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Ownerrname</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Pic</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Location</th>
+   <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Property Type</th>
+       <?php
+        if($_SESSION['logged_in']=='Y'){
+          echo '<th style="  padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: #570530;
+          color: white;" ><i>view details</i></th>';
+        }
+        ?>
 
       <tbody>
 
@@ -61,7 +98,7 @@ input[type=button], input[type=submit], input[type=reset] {
         mysqli_select_db($con,'rent_house');
         
   
-            $displayquery = " select * from imgupload where property_type like '%$keyword%'";
+            $displayquery = " select * from imgupload where property_type like '%$keyword%' order by id desc";
             $querydisplay=mysqli_query($con,$displayquery);
             $row=mysqli_num_rows($querydisplay);
            // print_r($row);
@@ -91,10 +128,14 @@ input[type=button], input[type=submit], input[type=reset] {
 
        echo "<tr>";
               //echo "<td> $a </td>";
-               echo "<td> $b</td>";
-               echo "<td><img src= $k height='100px' width='100px'></td>";
-         
-           echo " <td><a href='details.php?id=$a'>Details</a></td>";
+               echo "<td><b> $b</b></td>";
+               echo "<td><img src= $k height='150px' width='250px'></td>";
+               echo "<td><b> $j</b></td>";
+               echo "<td> <b>$c</b></td>";
+
+           if($_SESSION['logged_in']=='Y'){
+                echo " <td><b><a href='details.php?id=$a'>Details</a></b></td>";
+               }
              echo "</tr>";
 
                       }
@@ -131,3 +172,5 @@ input[type=button], input[type=submit], input[type=reset] {
 </div>
 <br>
 <br>
+      </body>
+      </html>

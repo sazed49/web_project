@@ -14,6 +14,7 @@ include('tenant-engine.php');
   margin: auto;
   text-align: center;
   font-family: arial;
+  background-color:black;
 }
 button {
   border: none;
@@ -21,7 +22,7 @@ button {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #79018C;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -52,7 +53,7 @@ button:hover, a:hover {
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>profile page</title>
 </head>
 <body class="bg">
 
@@ -61,7 +62,7 @@ button:hover, a:hover {
 
 
 
- <center><h3 style="color:white;font-size:20px;"><b>Tenant Profile</b></h3></center>
+ <center><h3 style="color:white;font-size:20px;"><b> Profile</b></h3></center>
       <div class="container">
       <?php 
         include("config/config.php");
@@ -78,9 +79,9 @@ button:hover, a:hover {
         <div class="card">
   <img src="<?php echo $rows['id_photo']; ?>" alt="John" style="height:200px; width: 50%">
   <h1 style="color:#FFD500;"><b><?php echo $rows['full_name']; ?></b></h1>
-  <p class="title"><?php echo $rows['email']; ?></p>
-  <p><b>Phone No.: </b><?php echo $rows['phone_no']; ?></p>
-  <p><b>Address: </b><?php echo $rows['address']; ?></p>
+  <p style="color:white;"><b><?php echo $rows['email']; ?></b></p>
+  <p style="color:white;"><b>Phone No.: <?php echo $rows['phone_no']; ?></b></p>
+  <p style="color:#FFD500;"><b>Address: <?php echo $rows['address']; ?></b></p>
   
   
   <!-- Trigger the modal with a button -->
@@ -107,7 +108,7 @@ button:hover, a:hover {
                 </div>
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" value="<?php echo $rows['email']; ?>" name="email" readonly>
+                  <input type="email" class="form-control" id="email" value="<?php echo $_COOKIE['email']; ?>" name="email" readonly>
                 </div>
                 <div class="form-group">
                   <label for="phone_no">Phone No.:</label>

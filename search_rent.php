@@ -30,18 +30,47 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.color{
+  background-color:#FFCBCB;
+  
 
+
+}
+tr:hover {background-color: #EA99D5;}
 
 </style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body class="color">
 <div class="bg"></div><br>
 <div class="container active-cyan-4 mb-4 inline">
 	<div class="table-responsive">
-    <table class="table table-bordered table-stripted table-hover text-center">
+    <table class="table table-bordered table-stripted  text-center">
       <thead>
    
-        <th>Ownerrname</th>
-        <th>pic</th>
-        <th>view details</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Ownerrname</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">pic</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Location</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">view details</th>
       </thead>
 
       <tbody>
@@ -51,7 +80,7 @@ body, html {
         mysqli_select_db($con,'rent_house');
         
   
-            $displayquery = " select * from imgupload where address like '%$keyword%'";
+            $displayquery = " select * from imgupload where address like '%$keyword%' order by id desc";
             $querydisplay=mysqli_query($con,$displayquery);
             //$row=mysqli_num_rows($querydisplay);
             //print_r($row);
@@ -83,6 +112,7 @@ body, html {
               //echo "<td> $a </td>";
                echo "<td> $b</td>";
                echo "<td><img src= $k height='100px' width='100px'></td>";
+               echo "<td>$j</td>";
          
            echo " <td><a href='details.php?id=$a'>Details</a></td>";
              echo "</tr>";
@@ -121,3 +151,5 @@ body, html {
 </div>
 <br>
 <br>
+      </body>
+      </html>

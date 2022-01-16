@@ -25,7 +25,7 @@ body, html {
   background-size: cover; */
 }
 
-
+tr:hover {background-color: #EA99D5;}
 </style>
 
 <div >
@@ -33,15 +33,27 @@ body, html {
 </div><br>
 <div class="container active-cyan-4 mb-4 inline">
 	<div class="table-responsive">
-    <table class="table table-bordered table-stripted table-hover text-center">
+    <table class="table table-bordered table-stripted text-center">
       <thead>
    
         
-        <th>pic</th>
-        <th>Address</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Pic</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #570530;
+  color: white;">Location</th>
         <?php
         if($_SESSION['logged_in']=='Y'){
-          echo "<th>view details</th>";
+          echo '<th style="  padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: #570530;
+          color: white;" >Option</th>';
         }
         ?>
       </thead>
@@ -84,7 +96,7 @@ body, html {
        echo "<tr>";
               //echo "<td> $a </td>";
                
-               echo "<td><img src= $k height='100px' width='100px'></td>";
+               echo "<td><img src= $k height='150px' width='250px'></td>";
                echo "<td> $j</td>";
               
                

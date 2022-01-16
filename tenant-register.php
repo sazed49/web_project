@@ -1,6 +1,16 @@
 <?php
 include ("navibar.php");
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Login</title> <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <style>
 .bg {
  
@@ -8,7 +18,7 @@ include ("navibar.php");
   background-image: url("images/home.jpg");
 
  
-  height: 50%; 
+  height: 100%; 
 
   
   background-position: center;
@@ -17,8 +27,8 @@ include ("navibar.php");
 }
 </style>
 
-<div class="bg">
-	<div class="container">
+<body class="bg">
+ <div class="container">
 	<h3 style="font-weight:bold;
 	font-size:30px;
 	text-align: center;color:#DFFF00  ">Register</h3><hr><br>
@@ -54,13 +64,17 @@ include ("navibar.php");
 		</div>
 		 <div class="form-group">
       <label style="color:white; font-size:20px;">Your selected File:</label><br>
-      <img src="" id="output_image"/ height="200px" required>
-    </div>
-    <hr>
-    <center><button id="submit" name="tenant_register" class="btn btn-primary btn-block" onclick="return Validate()">Register</button></center><br>
-
+      <img src="" id="output_image"/ height="100px" required>
+          </div>
+     
+	 
+     <center><button id="submit" name="tenant_register" class="btn btn-primary btn-block" onclick="return Validate()">Register</button></center><br>
+		<br>
 			</form>
-		</div>
+
+</div>
+</body>
+		</html>
 		<script type="text/javascript">
 			function preview_image(event)
 			{
@@ -95,5 +109,5 @@ include ("navibar.php");
 
 
 		</script>
-		</div>
-		</div>
+	
+		

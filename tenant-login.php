@@ -1,11 +1,6 @@
 <?php 
 session_start();
-// if(isset($_SESSION["email"])){
-//   header("location:index.php");
-// }
 
-// include("navibar.php");
-// include("tenant-engine.php");
 
  ?>
 <!DOCTYPE html>
@@ -67,8 +62,9 @@ input[type=button], input[type=submit], input[type=reset] {
       // echo $_SESSION["phone_no"];
       header('location:index.php');
     }
-    else{
-      echo "Email/Password incorrect";
+    else {
+      $message = "Username and/or Password incorrect.\\nTry again.";
+      echo "<script type='text/javascript'>alert('$message');</script>";
     }
 } 
  ?>
@@ -149,7 +145,7 @@ input[type=button], input[type=submit], input[type=reset] {
     <center ><input type="submit" id="submit" name="tenant_login" class="btn btn-primary btn-block" value="Login"></center>
   
   </form>
-  </div>
+       
   </div>
 </body>
 </html>

@@ -14,15 +14,7 @@ body, html {
   max-width: 100%;
   height: auto;
  
-  /* background-image: url("images/home.jpg");
-
- 
-  height: 50%; 
-
   
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 t{
   padding-top: 12px;
@@ -32,7 +24,7 @@ t{
   color: white;
 }
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: #4CAF50;
+  background-color:#6867AC;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -45,6 +37,7 @@ input[type=button], input[type=submit], input[type=reset] {
 
 
 }
+tr:hover {background-color: #EA99D5;}
 
 </style>
 <!DOCTYPE html>
@@ -53,7 +46,7 @@ input[type=button], input[type=submit], input[type=reset] {
 	<title></title>
 </head>
 <body class="color">
-<div>
+
 <video class="bg" autoplay muted loop>
   <source src="i.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
@@ -63,31 +56,31 @@ input[type=button], input[type=submit], input[type=reset] {
 	<!-- <div class="table-responsive"> -->
     <div  >
       <div >
-    <table  class="table table-bordered table-dark table-stripted table-hover text-center">
+    <table  class="table table-bordered table-dark table-stripted text-center">
       <thead>
    
         <th style="  padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #04AA6D;
-  color: white;">Ownerrname</th>
+  background-color: #570530;
+  color: white;"><i>Ownerrname</i></th>
         <th style="  padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #04AA6D;
-  color: white;">pic</th>
+  background-color: #570530;
+  color: white;"><i>Pic</i></th>
         <th style="  padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #04AA6D;
-  color: white;">Address</th>
+  background-color: #570530;
+  color: white;"><i>Location</i></th>
         <?php
         if($_SESSION['logged_in']=='Y'){
           echo '<th style="  padding-top: 12px;
           padding-bottom: 12px;
           text-align: center;
-          background-color: #04AA6D;
-          color: white;" >view details</th>';
+          background-color: #570530;
+          color: white;" ><i>view details</i></th>';
         }
         ?>
       </thead>
@@ -98,7 +91,7 @@ input[type=button], input[type=submit], input[type=reset] {
         $con=mysqli_connect('localhost','root');
         mysqli_select_db($con,'rent_house');
         
-            $address = $_COOKIE['address'];
+           // $address = $_COOKIE['address'];
             // echo $address;
             $displayquery = " select * from imgupload order by id desc";
             $querydisplay=mysqli_query($con,$displayquery);
@@ -130,12 +123,12 @@ input[type=button], input[type=submit], input[type=reset] {
 
        echo "<tr>";
               //echo "<td> $a </td>";
-               echo "<td> $b</td>";
-               echo "<td><img src= $k height='100px' width='100px'></td>";
-               echo "<td> $j</td>";
+               echo "<td><b> $b</b></td>";
+               echo "<td><img src= $k height='150px' width='250px'></td>";
+               echo "<td><b> $j</b></td>";
               
                if($_SESSION['logged_in']=='Y'){
-                echo " <td><a href='details.php?id=$a'>Details</a></td>";
+                echo " <td><b><a href='details.php?id=$a'>Details</a></b></td>";
                }
               echo "</tr>";
 
@@ -170,8 +163,8 @@ input[type=button], input[type=submit], input[type=reset] {
       </tbody>
     </table>
   </div>
-</div>
-<br>
-<br>
+
+
+
       </body>
       <html>

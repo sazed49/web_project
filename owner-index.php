@@ -2,7 +2,18 @@
 session_start();
 ?>
 <!DOCTYPE html>
+<style>
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #6867AC;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
+</style>
 <html>
 <head>
   <title></title>
@@ -23,33 +34,62 @@ session_start();
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-light justify-content-between" style="background-color: #090909">
-	<div class="container-fluid">
+	<div  class="container-fluid">
+		
 		<a class="navbar-header" href="index.php">
 			<img src="images/logo.jpg" alt="logo" style="height: 50px;">
 		</a>
-		<ul class="nav navbar-nav">
+		<ul  class="nav navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link" href="index.php">Home</a>
+				<a class="nav-link" href="index.php"><b>HomePage</b></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">About Us</a>
+				<a class="nav-link" href="category_rent.php?category=Flat Rent"><b>Flat</b></a>
 
 			</li>
 		
 			<li class="nav-item">
-				<a class="nav-link" href="#">Contact</a>
+				<a class="nav-link" href="category_rent.php?category=Full House Rent"><b>Full-House</b></a>
+			</li>
+			
+			<li class="nav-item">
+				<a class="nav-link" href="about.php"><b>About</b></a>
 			</li>
 		</ul>
+		
 		<ul class="nav navbar-nav navbar-right">
+		<?php
+		if(isset($_SESSION["email"]) && !empty($_SESSION['email'])){
+?>
 <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> My Profile
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['full_name']; ?>
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="profile.php">Profile</a></li>
-          <li><a href="owner-index.php">Add Property</a></li>
+          <li><a href="my-property.php">My property</a></li>
+		  <li><a href="owner-index.php">Add property</a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>
       </li>
+
+
+<?php
+  
+}
+
+	else	{
+		?>
+		<li class="nav-item"><a class="nav-link" href="tenant-register.php"><span class="glyphicon glyphicon-user"></span><b>Register</b> </a></li>
+		<li class="nav-item"><a class="nav-link" href="tenant-login.php"><span class="glyphicon glyphicon-user"></span><b>Login</b> </a></li>
+	<?php  }
+	?>
+
+<li class="nav-item">
+			<form  action="search_rent.php" method="get">
+				<input type="text" name="search" placeholder="search by address">
+				<input type="submit" name="submit"  value="Search">
+				</form>
+			</li>
 </ul>
 </div>
 </nav>
@@ -67,7 +107,7 @@ session_start();
    ?>
     <br>
     <h1 class="text-white bg-dark text-center">
-      post your add
+      Add Your Property
       
     </h1>
 
@@ -117,8 +157,12 @@ session_start();
                     <input type="number" class="form-control" id="bathroom" placeholder="Enter No. of Bathroom/Washroom" name="bathroom">
                   </div>
                   <div class="form-group">
+                    <label for="description">Location</label>
+                    <input type="comment" class="form-control" id="address"  name="address"></input>
+                  </div>
+                  <div class="form-group">
                     <label for="description">Full address:</label>
-                    <input type="comment" class="form-control" id="address" value=<?php echo $_COOKIE['address'];?> name="address"></input>
+                    <input type="comment" class="form-control" id="fulladdress"  name="fulladdress"></input>
                   </div>
                   <div class="form-group">
                     <label for="file">housepic</label>
