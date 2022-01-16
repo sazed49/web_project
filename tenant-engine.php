@@ -66,6 +66,7 @@ if(!empty($_FILES['id_photo'])){
 	$password = md5($password); // Encrypt password
 		$sql = "INSERT INTO tenant(tenant_id,full_name,email,password,phone_no,address,id_photo) VALUES('$tenant_id','$full_name','$email','$password','$phone_no','$address','$path')";
 		if($db->query($sql)===TRUE){
+			setcookie("address", "$address", time()+86400, "/");
 			header("location:tenant-login.php");
 	}
 }

@@ -86,7 +86,7 @@ session_start();
                       <option value="">--Select Property Type--</option>
                       <option value="Full House Rent">Full House Rent</option>
                       <option value="Flat Rent">Flat Rent</option>
-                      <option value="Room Rent">Room Rent</option>
+                      
                 </select>
             </div> 
              <div class="form-group">
@@ -118,7 +118,7 @@ session_start();
                   </div>
                   <div class="form-group">
                     <label for="description">Full address:</label>
-                    <textarea type="comment" class="form-control" id="address" placeholder="Enter Property Description" name="address"></textarea>
+                    <input type="comment" class="form-control" id="address" value=<?php echo $_COOKIE['address'];?> name="address"></input>
                   </div>
                   <div class="form-group">
                     <label for="file">housepic</label>

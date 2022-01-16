@@ -1,40 +1,75 @@
-
 <?php
 session_start();
 include("navibar.php");
 
 ?>
- <style>
-body, html {
-  height: 100%;
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
+  font-family: Arial;
+  font-size: 17px;
 }
 
-.bg {
- 
-  background-image: url("images/home.jpg");
-
- 
-  height: 60%; 
-
-  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
 
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
 
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
 </style>
+</head>
+<body>
 
-<div class="bg"></div><br>
-<div class="container active-cyan-4 mb-4 inline">
-	<div class="table-responsive">
-    <table class="table table-bordered table-stripted table-hover text-center">
+<video autoplay muted loop id="myVideo">
+  <source src="intro.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+<table class="table table-bordered table-stripted table-hover text-center">
       <thead>
    
         <th>Ownerrname</th>
         <th>pic</th>
-        <th>view details</th>
+        <th>Address</th>
+        <?php
+        if($_SESSION['logged_in']=='Y'){
+          echo "<th>view details</th>";
+        }
+        ?>
       </thead>
      
       <tbody>
@@ -48,11 +83,6 @@ body, html {
             $querydisplay=mysqli_query($con,$displayquery);
             //$row=mysqli_num_rows($querydisplay);
             //print_r($row);
-             include("config/config.php");
-             $u_email= $_SESSION["email"];
-
-        $sql="SELECT full_name from tenant where email='$u_email'";
-        $nam=mysqli_query($db,$sql);
 
             while ( $result= mysqli_fetch_array($querydisplay)) { 
               $a=$result['id'];
@@ -81,9 +111,12 @@ body, html {
               //echo "<td> $a </td>";
                echo "<td> $b</td>";
                echo "<td><img src= $k height='100px' width='100px'></td>";
-         
-           echo " <td><a href='details.php?id=$a'>Details</a></td>";
-             echo "</tr>";
+               echo "<td> $j</td>";
+              
+               if($_SESSION['logged_in']=='Y'){
+                echo " <td><a href='details.php?id=$a'>Details</a></td>";
+               }
+              echo "</tr>";
 
                       }
 
@@ -115,8 +148,8 @@ body, html {
 
       </tbody>
     </table>
-  </div>
-</div>
-<br>
-<br>
+      </div>
 
+
+</body>
+</html>

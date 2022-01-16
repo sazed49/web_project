@@ -8,7 +8,7 @@ include('tenant-engine.php');
  ?>
 <style>
 	.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
   max-width: 300px;
   max-height: 400px;
   margin: auto;
@@ -35,9 +35,33 @@ button:hover, a:hover {
 .form-group {
   text-align: left;
 }
-</style>
+.bg {
+ 
+ 
+ background-image: url("images/profile.jpg");
 
- <center><h3>Tenant Profile</h3></center>
+
+ height:100%; 
+
+ 
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body class="bg">
+
+
+
+
+
+
+ <center><h3 style="color:white;font-size:20px;"><b>Tenant Profile</b></h3></center>
       <div class="container">
       <?php 
         include("config/config.php");
@@ -53,7 +77,7 @@ button:hover, a:hover {
        ?>
         <div class="card">
   <img src="<?php echo $rows['id_photo']; ?>" alt="John" style="height:200px; width: 50%">
-  <h1><?php echo $rows['full_name']; ?></h1>
+  <h1 style="color:#FFD500;"><b><?php echo $rows['full_name']; ?></b></h1>
   <p class="title"><?php echo $rows['email']; ?></p>
   <p><b>Phone No.: </b><?php echo $rows['phone_no']; ?></p>
   <p><b>Address: </b><?php echo $rows['address']; ?></p>
@@ -117,4 +141,7 @@ button:hover, a:hover {
 
 
 </div>
+
 <?php }} ?>
+</body>
+</html>

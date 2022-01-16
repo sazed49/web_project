@@ -20,16 +20,14 @@
 				<a class="nav-link" href="index.php">HomePage</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="category_rent.php?category=Flat_Rent">Flat</a>
+				<a class="nav-link" href="category_rent.php?category=Flat Rent">Flat</a>
 
 			</li>
 		
 			<li class="nav-item">
-				<a class="nav-link" href="category_rent.php?category=FullHouse">Full-House</a>
+				<a class="nav-link" href="category_rent.php?category=Full House Rent">Full-House</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="category_rent.php?category=Room">Room</a>
-			</li>
+			
 			<li class="nav-item">
 				<a class="nav-link" href="about.php">About</a>
 			</li>
@@ -44,7 +42,8 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="profile.php">Profile</a></li>
-          <li><a href="owner-index.php">My property</a></li>
+          <li><a href="my-property.php">My property</a></li>
+		  <li><a href="owner-index.php">Add property</a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>
       </li>

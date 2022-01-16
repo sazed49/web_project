@@ -1,41 +1,59 @@
 <?php
 include ("navibar.php");
 ?>
-<div class="container">
+<style>
+.bg {
+ 
+ 
+  background-image: url("images/home.jpg");
+
+ 
+  height: 50%; 
+
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+<div class="bg">
+	<div class="container">
 	<h3 style="font-weight:bold;
-	text-align: center;">Register</h3><hr><br>
+	font-size:30px;
+	text-align: center;color:#DFFF00  ">Register</h3><hr><br>
 	<form method="POST" action="tenant-engine.php" enctype="multipart/form-data">
 		<div class="form-group">
-			<label for="full_name">Full Name:</label>
+			<label style="color:white; font-size:20px;" for="full_name">Full Name:</label>
 			<input type="text"  class="form-control" id="full_name" placeholder="Enter Full Name" name="full_name" required>
 		</div>
 		<div class="form-group">
-			<label for="email">email:</label>
+			<label style="color:white; font-size:20px;" for="email">email:</label>
 			<input type="email"  class="form-control" id="email" placeholder="Enter email" name="email" required>
 		</div>
 		<div class="form-group">
-			<label for="password1">password:</label>
+			<label style="color:white; font-size:20px;" for="password1">password:</label>
 			<input type="password"  class="form-control" id="password1" placeholder="Enter password" name="password" required>
 		</div>
 		<div class="form-group">
-			<label for="password2">confirm password:</label>
+			<label style="color:white; font-size:20px;" for="password2">confirm password:</label>
 			<input type="password"  class="form-control" id="password2" placeholder="Enter password again"  required>
 		</div>
 		<div class="form-group">
-			<label for="phone_no">phone No.:</label>
+			<label  style="color:white; font-size:20px;"for="phone_no">phone No.:</label>
 			<input type="text"  class="form-control" id="phone_no" placeholder="Enter phone number" name="phone_no" required>
 		</div>
 		<div class="form-group">
-			<label for="address">Address:</label>
+			<label  style="color:white; font-size:20px;"for="address">Address:</label>
 			<input type="text"  class="form-control" id="address" placeholder="Enter address" name="address" required>
 		</div>
 		
 		<div class="form-group">
-			<label for="card_photo">Upload your photo</label>
+			<label style="color:white; font-size:20px;" for="card_photo">Upload your photo</label>
 			<input type="file"  class="form-control" id="password1" placeholder="upload your photo" name="id_photo" accept="image/*" onchange="preview_image(event)" required>
 		</div>
 		 <div class="form-group">
-      <label>Your selected File:</label><br>
+      <label style="color:white; font-size:20px;">Your selected File:</label><br>
       <img src="" id="output_image"/ height="200px" required>
     </div>
     <hr>
@@ -77,3 +95,5 @@ include ("navibar.php");
 
 
 		</script>
+		</div>
+		</div>

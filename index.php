@@ -11,33 +11,83 @@ body, html {
 }
 
 .bg {
+  max-width: 100%;
+  height: auto;
  
-  background-image: url("images/home.jpg");
+  /* background-image: url("images/home.jpg");
 
  
-  height: 60%; 
+  height: 50%; 
 
   
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+}
+t{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.color{
+  background-color:#FFCBCB;
+
+
 }
 
-
 </style>
-
-<div class="bg"></div><br>
-<div class="container active-cyan-4 mb-4 inline">
-	<div class="table-responsive">
-    <table class="table table-bordered table-stripted table-hover text-center">
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body class="color">
+<div>
+<video class="bg" autoplay muted loop>
+  <source src="i.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+<!-- <div class="container active-cyan-4 mb-4 inline"> -->
+	<!-- <div class="table-responsive"> -->
+    <div  >
+      <div >
+    <table  class="table table-bordered table-dark table-stripted table-hover text-center">
       <thead>
    
-        <th>Ownerrname</th>
-        <th>pic</th>
-        <th>Address</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;">Ownerrname</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;">pic</th>
+        <th style="  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;">Address</th>
         <?php
         if($_SESSION['logged_in']=='Y'){
-          echo "<th>view details</th>";
+          echo '<th style="  padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: #04AA6D;
+          color: white;" >view details</th>';
         }
         ?>
       </thead>
@@ -48,12 +98,13 @@ body, html {
         $con=mysqli_connect('localhost','root');
         mysqli_select_db($con,'rent_house');
         
-  
-            $displayquery = " select * from imgupload ";
+            $address = $_COOKIE['address'];
+            // echo $address;
+            $displayquery = " select * from imgupload order by id desc";
             $querydisplay=mysqli_query($con,$displayquery);
             //$row=mysqli_num_rows($querydisplay);
             //print_r($row);
-
+            // echo mysqli_error($querydisplay);
             while ( $result= mysqli_fetch_array($querydisplay)) { 
               $a=$result['id'];
               $b=$result['ownername'];
@@ -122,4 +173,5 @@ body, html {
 </div>
 <br>
 <br>
-
+      </body>
+      <html>

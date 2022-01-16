@@ -11,15 +11,42 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Login</title> <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<style>
+.bg {
+ 
+ 
+ background-image: url("images/log.jpg");
+
+
+ height:100%; 
+
+ 
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<body class="bg">
+
    <?php
  $db = new mysqli('localhost','root','','rent_house');
+//  echo $_COOKIE['address'];
  if(isset($_POST['tenant_login'])){
   // tenant_update();
   $email=$_POST['email'];
@@ -35,6 +62,7 @@ session_start();
       $_SESSION['full_name']=$data["full_name"];
       $_SESSION['logged_in']= 'Y';
       $_SESSION['phone_no']= $data['phone_no'];
+      
       // echo $_SESSION['email'];
       // echo $_SESSION["phone_no"];
       header('location:index.php');
@@ -104,20 +132,24 @@ session_start();
 </ul>
 </div>
 </nav>
+<div >
 <div class="container">
-  <h3 style="font-weight: bold; text-align: center;">Tenant Login</h3><hr><br><br>
+  <h3 style="font-weight:bold;background:black;
+	text-align: center;color:#DFFF00">Tenant Login</h3><hr><br><br>
   <form method="POST">
     <div class="form-group">
-      <label for="email">Email:</label>
+      <label style="color:white; font-size:20px;" for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
+      <label style="color:white; font-size:20px;" for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
     </div>
-    
-    <center><input type="submit" id="submit" name="tenant_login" class="btn btn-primary btn-block" value="Login"></center>
+   
+    <center ><input type="submit" id="submit" name="tenant_login" class="btn btn-primary btn-block" value="Login"></center>
+  
   </form>
-</div>
+  </div>
+  </div>
 </body>
 </html>
