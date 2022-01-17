@@ -45,6 +45,9 @@ input[type=button], input[type=submit], input[type=reset] {
 
 
 }
+td{
+  text-align:center;
+}
 
 tr:hover {background-color: #EA99D5;}
 </style>
@@ -55,9 +58,9 @@ tr:hover {background-color: #EA99D5;}
 </head>
 <body class="color">
 <div class="bg"></div><br>
-<div class="container active-cyan-4 mb-4 inline">
-	<div class="table-responsive">
-    <table class="table table-bordered table-stripted  text-center">
+<!-- <div class="container active-cyan-4 mb-4 inline">
+	<div class="table-responsive"> -->
+    <table style="width:100%;">
       <thead>
    
        
@@ -169,7 +172,7 @@ tr:hover {background-color: #EA99D5;}
       </tbody>
     </table>
   </div>
-</div>
+<!-- </div> -->
 <br>
 <br>
       </body>

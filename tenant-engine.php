@@ -88,7 +88,7 @@ function tenant_login(){
 			$_SESSION['email']=$data['email'];
 			$_SESSION['full_name']=$data["full_name"];
 
-			setcookie("email", $email, time()+86400, "/");
+			//setcookie("email", $email, time()+86400, "/");
 			//echo $_COOKIE['address'];
 			
 			header('location:index.php');
@@ -126,11 +126,11 @@ function tenant_login(){
   color: black;
 }
 </style>
-<div class="container">
+<!-- <div class="container">
 <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>Incorrect Email/Password or not registered.</strong> Click here to <a href="tenant-register.php" style="color: lightblue;"><b>Register</b></a>.
-</div></div>
+</div></div> -->
 
 
 

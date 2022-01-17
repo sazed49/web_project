@@ -43,36 +43,31 @@ include "config/config.php";
     //            echo "<td><img src= $c height='100px' width='100px'></td>";
     //          echo "</tr>";
              ?>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6">
+	<table style="width:100%;border:none;">
+        <caption style="text-align:center; "> <b>Home details</b></caption>
+        <tr>
+            <td rowspan="12">
 				<?php
 				echo "<img src= $c height='500px' width='500px'>" 
 				 ?>
-			</div>
-			<div class="col-md-6">
-				 <table class="table table-stripted table-hover text-center">
-				 	<caption><h2>Home Details</h2> </caption>
-				<!-- <thead>
-					
-					
-				
-				</thead> -->
+			</td>
+         </tr>
+			
 
-				<tbody>
+				
 					<tr>
 						<th>Owner Name :</th>
 						<td><?php echo $b; ?></td>
 					</tr>
 					<tr>
-						<th> property type: :</th>
+						<th> property type: </th>
 						<td><?php echo $d; ?></td>
 					</tr>
 					<tr>
-						<th>estimated price::</th>
+						<th>estimated price:</th>
 						<td><?php echo $e; ?></td>
 					</tr>
-				<tr>
+				   <tr>
 						<th>total rooms:</th>
 						<td><?php echo $f; ?></td>
 					</tr>
@@ -104,11 +99,9 @@ include "config/config.php";
 						<th>Contact:</th>
 						<td><?php echo $m; ?></td>
 					</tr>
-             	</tbody>
+            
     		</table>
-			</div>
-		</div>
-	</div>
+		
 
 </body>
 </html>

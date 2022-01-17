@@ -37,6 +37,9 @@ input[type=button], input[type=submit], input[type=reset] {
 
 
 }
+td{
+  text-align:center;
+}
 tr:hover {background-color: #EA99D5;}
 
 </style>
@@ -51,12 +54,12 @@ tr:hover {background-color: #EA99D5;}
   <source src="i.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
-</div>
+
 <!-- <div class="container active-cyan-4 mb-4 inline"> -->
 	<!-- <div class="table-responsive"> -->
     <div  >
-      <div >
-    <table  class="table table-bordered table-dark table-stripted text-center">
+      
+    <table  style="width:100%">
       <thead>
    
         <th style="  padding-top: 12px;

@@ -24,6 +24,9 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover; */
 }
+td{
+  text-align:center;
+}
 
 tr:hover {background-color: #EA99D5;}
 </style>
@@ -31,9 +34,9 @@ tr:hover {background-color: #EA99D5;}
 <div >
 
 </div><br>
-<div class="container active-cyan-4 mb-4 inline">
-	<div class="table-responsive">
-    <table class="table table-bordered table-stripted text-center">
+<!-- <div class="container active-cyan-4 mb-4 inline">
+	<div class="table-responsive"> -->
+    <table style="width:100%;">
       <thead>
    
         
@@ -148,8 +151,8 @@ tr:hover {background-color: #EA99D5;}
 
       </tbody>
     </table>
-  </div>
-</div>
+  <!-- </div>
+</div> -->
 <br>
 <br>
 

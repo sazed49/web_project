@@ -57,7 +57,7 @@ input[type=button], input[type=submit], input[type=reset] {
       $_SESSION['full_name']=$data["full_name"];
       $_SESSION['logged_in']= 'Y';
       $_SESSION['phone_no']= $data['phone_no'];
-      
+      setcookie("email", $email, time()+86400, "/");
       // echo $_SESSION['email'];
       // echo $_SESSION["phone_no"];
       header('location:index.php');

@@ -20,7 +20,7 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+* {
   box-sizing: inherit;
 }
 
@@ -47,11 +47,11 @@ html {
   padding: 0 16px;
 }
 
-.container::after, .row::after {
+/* .container::after, .row::after {
   content: "";
   clear: both;
   display: table;
-}
+} */
 
 .title {
   color: black;
@@ -69,12 +69,12 @@ input[type=button], input[type=submit], input[type=reset] {
 
 
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
   .column {
     width: 100%;
     display: block;
   }
-}
+} */
 </style>
 </head>
 <body>
